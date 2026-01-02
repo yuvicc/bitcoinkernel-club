@@ -66,7 +66,7 @@ Since the library is provided via a C API, we will also discuss why C has been u
 - **Rust:** [rust-bitcoinkernel](https://github.com/TheCharlatan/rust-bitcoinkernel)
 - **Python:** [py-bitcoinkernel](https://github.com/stickies-v/py-bitcoinkernel)
 - **Go:** [go-bitcoinkernel](https://github.com/stringintech/go-bitcoinkernel)
-- **Java:** [java-bitcoinkernel](https://github.com/yuvicc/java-bitcoinkernel)
+- **Java/JDK:** [bitcoinkernel-jdk](https://github.com/yuvicc/bitcoinkernel-jdk)
 - **.NET:** [BitcoinKernel.NET](https://github.com/janb84/BitcoinKernel.NET)
 
 ### Further Reading
