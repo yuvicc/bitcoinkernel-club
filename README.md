@@ -70,7 +70,7 @@ Edit `src/main.c` and complete the TODOs!
 
 | Session | Date | Topic | Discussion | Recording |
 |---------|------|-------|------------|-----------|
-| 1 | Jan 8, 2026 | Introduction to Bitcoinkernel & C API basics | [Link(TBA)]() | [YouTube(TBA)]() |
+| 1 | Jan 8, 2026 | Introduction to Bitcoinkernel & C API basics | [Link](https://github.com/yuvicc/bitcoinkernel-club/issues/1) | [YouTube(TBA)]() |
 | 2 | Jan 15, 2026 | Memory management & Logging API | [Link(TBA)]() | [YouTube(TBA)]() |
 | 3 | Jan 22, 2026 | Chainstate API | [Link(TBA)]() | [YouTube(TBA)]() |
 | 4 | Jan 29, 2026 | Blocks API | [Link(TBA)]() | [YouTube(TBA)]() |
