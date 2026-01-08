@@ -1,0 +1,30 @@
+===========================================
+  Session 1: Taproot Script Validation
+===========================================
+
+Creating transaction object from raw bytes...
+Transaction created successfully!
+
+Creating script pubkey object...
+Script pubkey created successfully!
+
+Creating transaction output (amount: 88480 satoshis)...
+Transaction output created!
+
+Creating precomputed transaction data...
+Precomputed data created!
+
+Verifying script pubkey against transaction...
+Using ALL verification flags (includes Taproot)
+
+===========================================
+  SUCCESS: Script verification passed!
+  The Taproot spend is valid.
+===========================================
+
+Cleaning up resources...
+Cleanup complete!
+
+===========================================
+  Session 1 Complete!
+===========================================
