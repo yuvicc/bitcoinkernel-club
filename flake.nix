@@ -69,7 +69,33 @@
             '';
           };
 
-          # todo: add more sessions...
+          # Session 2: Hands on with Bitcoinkernel API
+          session2 = pkgs.mkShell {
+            buildInputs = [
+              bitcoinkernel
+              pkgs.clang
+              pkgs.gnumake
+              pkgs.gdb
+            ];
+
+            shellHook = ''
+              echo "=========================================="
+              echo "  Session 2: Handson with Bitcoinkernel API"
+              echo "=========================================="
+              echo ""
+              echo "Objectives:"
+              echo "  - Understand the libbitcoinkernel C API"
+              echo "  - Validate & process a block (contextual)"
+              echo ""
+              echo "  make        # compile"
+              echo "  make run    # run"
+              echo ""
+              echo ""
+              cd sessions/session2 2>/dev/null || true
+            '';
+          };
+
+          # Session 3
         };
       }
     );
