@@ -1,23 +1,9 @@
-/**
- * Bitcoinkernel Club - Session 1
- * Introduction to Bitcoinkernel & C API Basics
- *
- * This example demonstrates "context-free" validation using the bitcoinkernel C API.
- * We validate a Taproot transaction spend without requiring a full blockchain context.
- *
- * Transaction: 33e794d097969002ee05d336686fc03c9e15a597c1b9827669460fac98799036
- */
-
 #include "bitcoinkernel.h"
 
-#include <stdio.h>
-#include <stddef.h>
+#include "stddef.h"
+#include "stdio.h"
 
 int main() {
-    printf("===========================================\n");
-    printf("  Session 1: Taproot Script Validation\n");
-    printf("===========================================\n\n");
-
     // Taproot transaction 33e794d097969002ee05d336686fc03c9e15a597c1b9827669460fac98799036
     static const unsigned char tx[] = {
        0x01, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0xd1, 0xf1, 0xc1, 0xf8, 0xcd, 0xf6, 0x75, 0x91, 0x67,
@@ -43,65 +29,51 @@ int main() {
         0xab, 0xc0
     };
 
-    printf("todo: Creating transaction object from raw bytes...\n");
+    btck_Transaction* transaction = btck_transaction_create(tx, sizeof(tx));
+    if (transaction == NULL) {
+        printf("Error while creating transaction");
+        return 1;
+    }
+    const btck_Transaction* transaction_ = transaction;
 
-    // complete this
+    btck_ScriptPubkey* script_pubkey = btck_script_pubkey_create(script, sizeof(script));
+    if (script_pubkey == NULL) {
+        printf("Error while creating script pubkey");
+        return 1;
+    }
+    const btck_ScriptPubkey* script_pubkey_ = script_pubkey;
 
-    printf("Transaction created successfully!\n\n");
-
-    printf("todo: Creating script pubkey object...\n");
-    // complete this
-    printf("Script pubkey created successfully!\n\n");
-
-    // Amount in satoshis that was in the output being spent
     int64_t amount = 88480;
 
-    printf("Creating transaction output (amount: %ld satoshis)...\n", amount);
-    btck_TransactionOutput* output = btck_transaction_output_create(script_pubkey, amount);
-    const btck_TransactionOutput* output_ = output;
-    printf("Transaction output created!\n\n");
+    btck_TransactionOutput* spent_outputs = btck_transaction_output_create(script_pubkey, amount);
+    if (spent_outputs == NULL) {
+        printf("Error while creating Transaction Output");
+        return 1;
+    }
+    const btck_TransactionOutput* spent_outputs_ = spent_outputs;
 
-    printf("todo: Creating precomputed transaction data...\n");
-    // todo
-    printf("Precomputed data created!\n\n");
+    const btck_TransactionOutput* spent_outputs_array[1] = {spent_outputs_};
+    btck_PrecomputedTransactionData* precomputed_data = btck_precomputed_transaction_data_create(transaction_, spent_outputs_array, 1);
+    if (precomputed_data == NULL) {
+        printf("Precomputed Transaction Data creation failed");
+        return 1;
+    }
+    const btck_PrecomputedTransactionData* precomputed_data_ = precomputed_data;
 
-    // Status will be set by the verification function
     btck_ScriptVerifyStatus status = btck_ScriptVerifyStatus_OK;
 
-    printf("Verifying script pubkey against transaction...\n");
-    printf("Using ALL verification flags (includes Taproot)\n\n");
+    int result = btck_script_pubkey_verify(script_pubkey_, amount, transaction_, precomputed_data_, 0, btck_ScriptVerificationFlags_ALL, &status);
 
-    int result = btck_script_pubkey_verify(
-            /*script_pubkey=*/ script_pubkey,
-            /*amount=*/ amount,
-            /*tx_to=*/ transaction_ptr,
-            /*precomputed_txdata=*/ precomputed_data_ptr,
-            /*input_index=*/ 0,
-            /*flags=*/ btck_ScriptVerificationFlags_ALL,
-            /*status*/ &status);
+    btck_transaction_output_destroy(spent_outputs);
+    btck_script_pubkey_destroy(script_pubkey);
+    btck_precomputed_transaction_data_destroy(precomputed_data);
+    btck_transaction_destroy(transaction);
 
-    // Check the verification result
-    printf("===========================================\n");
-    if (result && status == btck_ScriptVerifyStatus_OK) {
-        printf("  SUCCESS: Script verification passed!\n");
-        printf("  The Taproot spend is valid.\n");
+    if (result == 1) {
+        printf("Script Verification Succeeded.");
     } else {
-        printf("  FAILURE: Script verification failed!\n");
-        printf("  Status code: %d\n", status);
+        printf("Script Verification Failed.");
     }
-    printf("===========================================\n\n");
 
-    // Clean up all resources
-    printf("Cleaning up resources...\n");
-    btck_precomputed_transaction_data_destroy(precomputed_data_ptr);    //todo
-    btck_transaction_output_destroy(output);
-    btck_script_pubkey_destroy(script_pubkey_ptr);      // todo
-    btck_transaction_destroy(transaction_ptr);          // todo
-    printf("Cleanup complete!\n\n");
-
-    printf("===========================================\n");
-    printf("  Session 1 Complete!\n");
-    printf("===========================================\n");
-
-    return !(result && status == btck_ScriptVerifyStatus_OK);
+    return 0;
 }
