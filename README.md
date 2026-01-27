@@ -70,9 +70,9 @@ Edit `src/main.c` and complete the TODOs!
 
 | Session | Date | Topic | Discussion | Recording |
 |---------|------|-------|------------|-----------|
-| 1 | Jan 8, 2026 | Introduction to Bitcoinkernel & C API basics | [Link(TBA)]() | [YouTube(TBA)]() |
-| 2 | Jan 15, 2026 | Memory management & Logging API | [Link(TBA)]() | [YouTube(TBA)]() |
-| 3 | Jan 22, 2026 | Chainstate API | [Link(TBA)]() | [YouTube(TBA)]() |
+| 1 | Jan 8, 2026 | Introduction to Bitcoinkernel & C API basics | [Link](https://github.com/yuvicc/bitcoinkernel-club/issues/1) | [YouTube](https://youtu.be/2xMmAL3HLbo?si=UiHwZ7p4dhRumSXa) |
+| 2 | Jan 15, 2026 | Memory management & Logging API | [Link](https://github.com/yuvicc/bitcoinkernel-club/issues/3) | [YouTube](https://youtu.be/rBVSGjvC0D0?si=tNrJm0qCKICYA0OG) |
+| 3 | Jan 22, 2026 | Chainstate API | [Link](https://github.com/yuvicc/bitcoinkernel-club/issues/4) | [YouTube(TBA)]() |
 | 4 | Jan 29, 2026 | Blocks API | [Link(TBA)]() | [YouTube(TBA)]() |
 | 5 | TBD | BlockTree API | [Link(TBA)]() | [YouTube(TBA)]() |
 | 6 | TBD | Transaction & Script validation | [Link(TBA)]() | [YouTube(TBA)]() |
