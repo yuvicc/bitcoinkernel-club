@@ -71,17 +71,17 @@ Edit `src/main.c` and complete the TODOs!
 | Session | Date | Topic | Discussion | Recording |
 |---------|------|-------|------------|-----------|
 | 1 | Jan 8, 2026 | Introduction to Bitcoinkernel & C API basics | [Link](https://github.com/yuvicc/bitcoinkernel-club/issues/1) | [YouTube](https://youtu.be/2xMmAL3HLbo?si=UiHwZ7p4dhRumSXa) |
-| 2 | Jan 15, 2026 | Memory management & Logging API | [Link](https://github.com/yuvicc/bitcoinkernel-club/issues/3) | [YouTube](https://youtu.be/rBVSGjvC0D0?si=tNrJm0qCKICYA0OG) |
-| 3 | Jan 22, 2026 | Chainstate API | [Link](https://github.com/yuvicc/bitcoinkernel-club/issues/4) | [YouTube(TBA)]() |
-| 4 | Jan 29, 2026 | Blocks API | [Link(TBA)]() | [YouTube(TBA)]() |
-| 5 | TBD | BlockTree API | [Link(TBA)]() | [YouTube(TBA)]() |
-| 6 | TBD | Transaction & Script validation | [Link(TBA)]() | [YouTube(TBA)]() |
-| 7 | TBD | Completing & testing our bindings | [Link(TBA)]() | [YouTube(TBA)]() |
-| 8 | TBD | Java, Go & Python bindings | [Link(TBA)]() | [YouTube(TBA)]() |
-| 9 | TBD | PR Review: #33856 & #33822 | [Link(TBA)]() | [YouTube(TBA)]() |
-| 10 | TBD | PR Review: #33796 | [Link(TBA)]() | [YouTube(TBA)]() |
-| 11 | TBD | PR Review: #33908 | [Link(TBA)]() | [YouTube(TBA)]() |
-| 12 | TBD | TBD | [Link(TBA)]() | [YouTube(TBA)]() |
+| 2 | Jan 15, 2026 | C API Hands On, Part-I | [Link](https://github.com/yuvicc/bitcoinkernel-club/issues/3) | [YouTube](https://youtu.be/rBVSGjvC0D0?si=tNrJm0qCKICYA0OG) |
+| 3 | Jan 29, 2026 | C API Hands On, Part-II | [Link](https://github.com/yuvicc/bitcoinkernel-club/issues/4) | [YouTube(TBA)]() |
+| 4 | Feb 04, 2026 | TBA | [Link(TBA)]() | [YouTube(TBA)]() |
+| 5 | TBD | TBA | [Link(TBA)]() | [YouTube(TBA)]() |
+| 6 | TBD | TBA | [Link(TBA)]() | [YouTube(TBA)]() |
+| 7 | TBD | TBA | [Link(TBA)]() | [YouTube(TBA)]() |
+| 8 | TBD | TBA | [Link(TBA)]() | [YouTube(TBA)]() |
+| 9 | TBD | TBA | [Link(TBA)]() | [YouTube(TBA)]() |
+| 10 | TBD | TBA | [Link(TBA)]() | [YouTube(TBA)]() |
+| 11 | TBD | TBA | [Link(TBA)]() | [YouTube(TBA)]() |
+| 12 | TBD | TBA | [Link(TBA)]() | [YouTube(TBA)]() |
 
 ## Key Resources
 
