@@ -5,13 +5,29 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     nix-bitcoinkernel.url = "github:yuvicc/nix-bitcoinkernel";
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, nix-bitcoinkernel }:
+  outputs = { self, nixpkgs, flake-utils, nix-bitcoinkernel, fenix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
         bitcoinkernel = nix-bitcoinkernel.packages.${system}.default;
+
+        rustVersion = "1.71.0";
+        rustToolchain = fenix.packages.${system}.fromToolchainName {
+          name = rustVersion;
+          sha256 = "sha256-ks0nMEGGXKrHnfv4Fku+vhQ7gx76ruv6Ij4fKZR3l78=";
+        };
+        rustBuildToolchain = fenix.packages.${system}.combine [
+          rustToolchain.rustc
+          rustToolchain.cargo
+          rustToolchain.rust-src
+          rustToolchain.rust-std
+        ];
       in
       {
         devShells = {
